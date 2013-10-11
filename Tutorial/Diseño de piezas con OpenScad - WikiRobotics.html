@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes -->
+<html lang="es" dir="ltr" class="client-js"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Diseño de piezas con OpenScad - WikiRobotics</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.19.2">
+<meta name="robots" content="noindex,follow">
+<link rel="shortcut icon" href="http://www.iearobotics.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.iearobotics.com/wiki/opensearch_desc.php" title="WikiRobotics (es)">
+<link rel="EditURI" type="application/rsd+xml" href="http://www.iearobotics.com/wiki/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Feed Atom de WikiRobotics" href="http://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes&feed=atom">
+<link rel="stylesheet" href="http://www.iearobotics.com/wiki/load.php?debug=false&lang=es&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&only=styles&printable=1&skin=monobook&*">
+<style type="text/css" media="all">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: iearobotics_wiki-wiki_:resourceloader:filter:minify-css:7:8b08bdc91c52a9ffba396dccfb5b473c */
+
+
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: iearobotics_wiki-wiki_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: iearobotics_wiki-wiki_:resourceloader:filter:minify-css:7:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+
+<script src="./Diseño de piezas con OpenScad - WikiRobotics_files/load.php"></script><script src="./Diseño de piezas con OpenScad - WikiRobotics_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Diseño_de_piezas_con_OpenScad","wgTitle":"Diseño de piezas con OpenScad","wgCurRevisionId":16009,"wgArticleId":2397,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Robots imprimibles","Charlas y Conferencias","Robótica","Obijuan Academy"],"wgBreakFrames":false,"wgPageContentLanguage":"es","wgSeparatorTransformTable":[",	.",".	,"],"wgDigitTransformTable":["",""],"wgRelevantPageName":"Diseño_de_piezas_con_OpenScad","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":
+0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"es","language":"es","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function($){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: iearobotics_wiki-wiki_:resourceloader:filter:minify-js:7:863caad7b591c8bcda12480d4a5c5a39 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./Diseño de piezas con OpenScad - WikiRobotics_files/load(2).php"></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Diseño_de_piezas_con_OpenScad skin-monobook action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content"><div id="mw-js-message" class="js-messagebox" style="display: none;"></div>
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading"><span dir="auto">Diseño de piezas con OpenScad</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">De WikiRobotics</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#column-one">navegación</a>, <a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#searchInput">buscar</a></div>
+		<!-- start content -->
+<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><center>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Logo-openscad-openhw.png" class="image"><img alt="Logo-openscad-openhw.png" src="./Diseño de piezas con OpenScad - WikiRobotics_files/400px-Logo-openscad-openhw.png" width="400" height="312" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Logo-openscad-openhw.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div></div></div></div> 
+</center>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#" class="internal" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Ficha"><span class="tocnumber">1</span> <span class="toctext">Ficha</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Introducci.C3.B3n"><span class="tocnumber">2</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Descargas"><span class="tocnumber">3</span> <span class="toctext">Descargas</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Primeros_pasos_con_Openscad"><span class="tocnumber">4</span> <span class="toctext">Primeros pasos con Openscad</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#1.29_Cubo_Hola_mundo"><span class="tocnumber">4.1</span> <span class="toctext">1) Cubo Hola mundo</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#2.29_Traslaciones_y_rotaciones"><span class="tocnumber">4.2</span> <span class="toctext">2) Traslaciones y rotaciones</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#3.29_Cilindros:_la_navaja_suiza"><span class="tocnumber">4.3</span> <span class="toctext">3) Cilindros: la navaja suiza</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#4.29_Haciendo_taladros"><span class="tocnumber">4.4</span> <span class="toctext">4) Haciendo taladros</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#5.29_Pegando_piezas"><span class="tocnumber">4.5</span> <span class="toctext">5) Pegando piezas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Vislumbrando_la_potencia_de_openscad"><span class="tocnumber">5</span> <span class="toctext">Vislumbrando la potencia de openscad</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#6.29_Parametr.C3.ADzame.21"><span class="tocnumber">5.1</span> <span class="toctext">6) Parametrízame!</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#7.29_Modular.C3.ADzame.21"><span class="tocnumber">5.2</span> <span class="toctext">7) Modularízame!</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#8.29_Par.C3.A1metros_por_defecto"><span class="tocnumber">5.3</span> <span class="toctext">8) Parámetros por defecto</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#9.29_Usando_m.C3.B3dulos"><span class="tocnumber">5.4</span> <span class="toctext">9) Usando módulos</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#10.29_Repitiendo_tareas"><span class="tocnumber">5.5</span> <span class="toctext">10) Repitiendo tareas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Ejemplo_1:_Piezas_de_mecano_b.C3.A1sicas"><span class="tocnumber">6</span> <span class="toctext">Ejemplo 1: Piezas de mecano básicas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#11.29_Pieza_de_mecano_parametrizable_I"><span class="tocnumber">6.1</span> <span class="toctext">11) Pieza de mecano parametrizable I</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#12.29_Pieza_de_Mecano_parametrizable_II"><span class="tocnumber">6.2</span> <span class="toctext">12) Pieza de Mecano parametrizable II</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Depurando_piezas"><span class="tocnumber">6.3</span> <span class="toctext">Depurando piezas</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Imprimiendo_las_piezas_de_mecano"><span class="tocnumber">6.4</span> <span class="toctext">Imprimiendo las piezas de mecano</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Repositorio"><span class="tocnumber">7</span> <span class="toctext">Repositorio</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Licencia"><span class="tocnumber">8</span> <span class="toctext">Licencia</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Enlaces"><span class="tocnumber">9</span> <span class="toctext">Enlaces</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&printable=yes#Noicias"><span class="tocnumber">10</span> <span class="toctext">Noicias</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Ficha"> Ficha </span></h2>
+<ul><li> <b>Título</b>: Diseño de piezas con OpenScad
+</li><li> <b>Contexto</b>: Sesión 2 del seminario: <a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_e_Impresi%C3%B3n_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011</a> dentro del Máster de Áutomática y Robótica de la UC3M 
+</li><li> <b>Ponente</b>: <a href="http://www.iearobotics.com/wiki/index.php?title=Juan_Gonzalez:Main" title="Juan Gonzalez:Main"> Juan González</a>
+</li><li> <b>Duración</b>: 2 horas
+</li><li> <b>Lugar</b>: Universidad Carlos III de Madrid
+</li><li> <b>Fecha</b>: 17-Nov-2011
+</li></ul>
+<h2> <span class="mw-headline" id="Introducci.C3.B3n"> Introducción </span></h2>
+<p>Inicialmente en esta página se iban a poner sólo los ejemplos dados en la sesión 2 del seminario <a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_e_Impresi%C3%B3n_de_Piezas_3D_con_herramientas_Open_Source._UC3M-2011" title="Diseño e Impresión de Piezas 3D con herramientas Open Source. UC3M-2011">Diseño e Impresión de Piezas 3D con herramientas Open Source</a> dentro del <b>Máster de Áutomática y Robótica de la UC3M</b>. Esta sesión fue presencial con una duración de 2 horas. Mostré diferentes ejemplos en mi portátil y los asistentes iban haciéndolos sobre la marcha en los suyos.
+</p><p>Al publicar la información en esta wiki (6 meses después y ya fuera de la UC3M), decidí hacer unos micro <b>video-tutoriales</b> y convertir esta sesión en un <b>micro-curso on-line</b>. Tomé la decisión de hacer micro-sesiones de unos <b>3 minutos</b>. La razón de esto es que antes de la publicación, asistí a un curso/charla que duró 2h y 30 minutos, fue un auténtico rollazo y no aprendí nada. Salí tan cabreado que decidí hacer micro-sesiones de 3 minutos. Así, si una sesión no te ha gustado, <b>sólo habrás perdido 3 minutos de tu vida</b>. Y si te ha gustado, podrás seguir avanzando con las siguientes.
+</p>
+<h2> <span class="mw-headline" id="Descargas"> Descargas </span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a rel="nofollow" class="external text" href="http://www.iearobotics.com/downloads/2012-05-22-openscad-tutorial/tutorial_openscad-01-14.zip">tutorial_openscad-01-14.zip</a>
+</td>
+<td> Paquete con los primeros 14 ejemplos de este tutorial
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Primeros_pasos_con_Openscad"> Primeros pasos con Openscad </span></h2>
+<h3> <span class="mw-headline" id="1.29_Cubo_Hola_mundo"> 1) Cubo Hola mundo </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=xvhbrUSQRTc"><b>Video Tutorial 1/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-01-cubo.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-01-cubo.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-01-cubo.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>El cubo "hola mundo" (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Cubo Hola Mundo
+cube([10,10,10]);
+</pre>
+</td></tr></tbody></table>
+<p>Los pasos a realizar son los siguientes:
+</p>
+<ul><li> Abrir OpenScad
+</li><li> Escribir el código del programa
+</li><li> <b>Pulsar F5</b> para renderizar el cubo en pantalla. Lo que se nos ha creado es un cubo de 10mm de arista
+</li><li> Con la <b>rueda</b> del ratón se hace zoom
+</li><li> Pulsando el <b>botón izquierdo</b> y moviendo el raton se rota la vista del cubo.
+</li><li> Pulsando el <b>botón central</b> y moviendo el ratón se hace traslación del punto de vista
+</li><li> Por último se graba el programa openscad creado
+</li><li> Se <b>pulsa F6</b> para hacer un renderizado "bueno"
+</li><li> Se exporta la pieza al <b>formato STL</b> (view/export as STL)
+</li><li> ¡¡El cubo está listo para ser impreso en una impresora 3D open-source!!
+</li></ul>
+<h3> <span class="mw-headline" id="2.29_Traslaciones_y_rotaciones"> 2) Traslaciones y rotaciones </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=QMsTnDUkJ1E"><b>Video Tutorial 2/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-02-Rotacion-traslacion.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-02-Rotacion-traslacion.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-02-Rotacion-traslacion.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>(<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Ejemplo de translación y rotación <br>
+//-- Traslación y rotación de un cubo
+rotate([0,0,30])
+  translate([50,0,0])
+    cube([20,20,20],center=true); <br>
+//-- rotación de un cubo
+rotate([0,0,45])
+  cube([20,20,10],center=true);
+</pre>
+</td></tr></tbody></table>
+<p>Las traslaciones y rotaciones se realizan con los operadores <b>translate()</b> y <b>rotate()</b> respectivamente.
+</p>
+<h3> <span class="mw-headline" id="3.29_Cilindros:_la_navaja_suiza"> 3) Cilindros: la navaja suiza </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=OdUgqYm5lXQ"><b>Video Tutorial 3/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-03-cilindros.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-03-cilindros.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-03-cilindros.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>(<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Moneda
+translate([-50,0,0])
+  cylinder(r=40/2, h=5, $fn=100); <br>
+//-- Hexágono
+cylinder(r=40/2, h=5, $fn=6); <br>
+//-- Triángulo equilátero
+translate([50,0,0])
+  cylinder(r=40/2, h=5, $fn=3);
+</pre>
+</td></tr></tbody></table>
+<p>Se muestra la versatilidad de los <b>cilindros</b>. Cambiando el parámetro <b>$fn</b>, se puede hacer cualquier polígono regular.
+</p>
+<h3> <span class="mw-headline" id="4.29_Haciendo_taladros"> 4) Haciendo taladros </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=WJFqa7LUpmA"><b>Video Tutorial 4/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-04-taladros.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-04-taladros.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-04-taladros.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Una rueda simple (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Rueda simple
+difference() {
+  //-- Base de la rueda
+  cylinder(r=50/2, h=5,$fn=100);<br>
+  //-- Taladro de 8mm
+  cylinder(r=8/2, h=20,$fn=20,center=true);
+}
+</pre>
+</td></tr></tbody></table>
+<p>Utilización de la operación booleana <b>difference()</b> y de los <b>cilindros</b> para <b>realizar taladros</b> a piezas.
+</p>
+<h3> <span class="mw-headline" id="5.29_Pegando_piezas"> 5) Pegando piezas </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=UlM_N_HPhVk"><b>Video Tutorial 5/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-05-pegando.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-05-pegando.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-05-pegando.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Una rueda con portaejes (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Rueda con portaejes y taladro para el eje
+difference() {
+  //-- Rueda
+  union() {
+    //-- Base de la rueda
+    cylinder(r=50/2, h=5, $fn=100);
+    //-- Portaejes
+    cylinder(r=20/2, h=20, $fn=80);
+  }
+  //-- Taladro
+  cylinder(r=8/2, h=80, $fn=30,center=true);
+}
+</pre>
+</td></tr></tbody></table>
+<p>Utilización de la operación booleana <b>union()</b> para pegar objetos
+</p>
+<h2> <span class="mw-headline" id="Vislumbrando_la_potencia_de_openscad"> Vislumbrando la potencia de openscad </span></h2>
+<h3> <span class="mw-headline" id="6.29_Parametr.C3.ADzame.21"> 6) Parametrízame! </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=86PLSLyK3Bc"><b>Video Tutorial 6/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-06-parametrizame.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-06-parametrizame.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-06-parametrizame.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Una rueda parametrizada (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre> //-- Parámetros de la rueda
+ grosor = 5;
+ diametro=50;
+ diam_eje = 8; <br>
+ //-- Construcción de la rueda a partir de
+ //-- los parámetros
+ difference() {
+   //-- Base de la rueda
+   cylinder(r=diametro/2, h=grosor,$fn=100); <br>
+   //-- Taladro del eje
+   cylinder(r=diam_eje/2, h=3*grosor,$fn=20,center=true);
+ } 
+</pre>
+</td></tr></tbody></table>
+<p>Rueda paramétrica: La rueda se define por unos <b>parámetros</b>, y luego se construye la rueda usando esos parámetros
+</p>
+<h3> <span class="mw-headline" id="7.29_Modular.C3.ADzame.21"> 7) Modularízame! </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=irMSrEzh0JM"><b>Video Tutorial 7/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-07-modularizame.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-07-modularizame.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-07-modularizame.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Rueda modularizada (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>module rueda_simple(grosor, diametro, diam_eje)
+{
+  //-- Construcción de la rueda a partir de
+  //-- los parámetros
+  difference() {
+    //-- Base de la rueda
+    cylinder(r=diametro/2, h=grosor,$fn=100);
+    //-- Taladro del eje
+    cylinder(r=diam_eje/2, h=3*grosor,$fn=20,center=true);
+  }
+} <br>
+rueda_simple(diametro=50, grosor=5, diam_eje=8);<br>
+translate([50,0,0])
+  rueda_simple(diametro=40, grosor=20, diam_eje=10);
+</pre>
+</td></tr></tbody></table>
+<p>Convirtiendo la rueda en un <b>módulo</b> para poder <b>reutilizarla</b> fácilmente
+</p>
+<h3> <span class="mw-headline" id="8.29_Par.C3.A1metros_por_defecto"> 8) Parámetros por defecto </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=Tf5NCHbjfqI"><b>Video Tutorial 8/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-08-def-params.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-08-def-params.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-08-def-params.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Rueda modularizada con parámetros por defecto (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>module rueda_simple(grosor=5, diametro=40, diam_eje=8)
+{
+  //-- Construcción de la rueda a partir de
+  //-- los parámetros
+  difference() {
+    //-- Base de la rueda
+    cylinder(r=diametro/2, h=grosor,$fn=100); <br>
+    //-- Taladro del eje
+    cylinder(r=diam_eje/2, h=3*grosor,$fn=20,center=true);
+  }
+}<br>
+//-- Ejemplos de utilizacion del modulo Rueda simple
+//-- Rueda por defecto
+rueda_simple();<br>
+translate([50,0,0])
+  rueda_simple(grosor=20); <br>
+translate([-50,0,0])
+  rueda_simple(diametro=20, grosor=10);
+</pre>
+</td></tr></tbody></table>
+<p>Dando <b>parámetros por defecto</b> al módulo de la <b>rueda simple</b> para facilitar su utilización
+</p>
+<h3> <span class="mw-headline" id="9.29_Usando_m.C3.B3dulos"> 9) Usando módulos </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=wZt9ROx2_Co"><b>Video Tutorial 9/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-09-usando-modulos.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-09-usando-modulos.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-09-usando-modulos.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Un coche simple (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>//-- Ejemplo sencillo de como utilizar los modulos
+use &lt;rueda_simple.scad&gt; <br>
+//-- Chasis del cohe
+translate([30,0,0])
+  cube([100,60,10],center=true); <br>
+//-- Rueda delantera izquierda
+translate([0,-30,0])
+ rotate([90,0,0])
+   rueda_simple(); <br>
+//-- Rueda trasera izquierda
+translate([60,-30,0])
+  rotate([90,0,0])
+    rueda_simple(grosor=20, diametro=50); <br>
+//-- Lado derecho del coche. Es simetrico con respecto
+//-- al izquierdo
+mirror([0,1,0]) {
+  //-- Rueda delantera derecha
+  translate([0,-30,0])
+    rotate([90,0,0])
+      rueda_simple(); <br>
+  //-- Rueda trasera derecha
+  translate([60,-30,0])
+    rotate([90,0,0])
+      rueda_simple(grosor=20, diametro=50);
+}
+</pre>
+</td></tr></tbody></table>
+<p>Utilización del módulo rueda simple para construir un coche sencillo
+</p>
+<h3> <span class="mw-headline" id="10.29_Repitiendo_tareas"> 10) Repitiendo tareas </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=J5nCIrlQj_g"><b>Video Tutorial 10/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-10-usando-modulos.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-10-usando-modulos.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-10-usando-modulos.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Una tira variable de cilindros para hacer taladros (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>drill=4;
+h1=10;
+d=10;
+n = 20;<br>
+for (i=[0:n-1]) {
+  translate([i*d,0,0])
+   cylinder(r=drill/2, h=h1, $fn=20,center=true);
+} 
+
+</pre>
+</td></tr></tbody></table>
+<p>Se crean <b>multiples cilindros</b> utilizando un <b>bucle for</b>
+</p>
+<h2> <span class="mw-headline" id="Ejemplo_1:_Piezas_de_mecano_b.C3.A1sicas"> Ejemplo 1: Piezas de mecano básicas </span></h2>
+<p>En este bloque utilizaremos lo que hemos aprendido para <b>cerrar el ciclo de diseño</b>. Diseñaremos una <b>pieza de mecano simple</b> y la <b>imprimiremos</b> en la impresora 3D opensource. Durante el diseño se introducen también algunos conceptos nuevos
+</p>
+<h3> <span class="mw-headline" id="11.29_Pieza_de_mecano_parametrizable_I"> 11) Pieza de mecano parametrizable I </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=YHg5QApmFO4"><b>Video Tutorial 11/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-11-usando-modulos.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-11-usando-modulos.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-11-usando-modulos.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Pieza de mecano parametrizada (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>drill=3;
+d=10;
+n = 4; <br>
+lx = n*d;
+anchura = 10;
+grosor = 3;<br>
+difference() {
+  //-- Cuerpo de la pieza
+  cube([lx,anchura,grosor],center=true); <br>
+  //-- Taladros
+  translate([-lx/2+d/2,0,0])
+    for (i=[0:n-1]) {
+      translate([i*d,0,0])
+        cylinder(r=drill/2, h=grosor+5, $fn=20,center=true);
+  }
+} 
+</pre>
+</td></tr></tbody></table>
+<p>En este ejemplo se construye la pieza de mecano básica
+</p>
+<h3> <span class="mw-headline" id="12.29_Pieza_de_Mecano_parametrizable_II"> 12) Pieza de Mecano parametrizable II </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=2u9gaYx6j7w"><b>Video Tutorial 12/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-12-pieza-mecano-2.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-12-pieza-mecano-2.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-12-pieza-mecano-2.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Pieza de mecano parametrizada, convertida en un módulo y con parámetros por defecto (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>module pieza_mecano(n=4, drill=4, d=10, anchura=10, grosor=3)
+{
+  //-- Calcular al longitud de la pieza
+  lx = n*d;<br>
+  //-- Construir la pieza
+  difference() {
+    //-- Cuerpo de la pieza
+    cube([lx,anchura,grosor],center=true); <br>
+    //-- Taladros
+    translate([-lx/2+d/2,0,0])
+      for (i=[0:n-1]) {
+        translate([i*d,0,0])
+          cylinder(r=drill/2, h=grosor+5, $fn=20,center=true);
+     }
+  }
+} <br>
+//-- Ejemplos de utilizacion
+pieza_mecano(); <br>
+translate([0,20,0])
+  pieza_mecano(n=2); 
+</pre>
+</td></tr></tbody></table>
+<p>La pieza de mecano se modulariza y se asignan parámetros por defecto
+</p>
+<h3> <span class="mw-headline" id="Depurando_piezas"> Depurando piezas </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=X34wjwg3HeU"><b>Video Tutorial 13/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-13-depurando.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-13-depurando.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-13-depurando.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Depurando y entendiendo una pieza (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>difference() { <br>
+ //-- Pieza sin taladros
+ union() {
+   //-- Cuerpo
+   color("blue")
+   cube([167.8, 30, 5],center=true); <br>
+   //-- Torre derecha
+   color("green")
+   translate([167.8/2-20/2,0,13/2+5/2])
+      cube([20,30,13],center=true); <br>
+   //-- Torre izquierda
+   color("green")
+   translate([-167.8/2+20/2,0,13/2+5/2])
+     cube([20,30,13],center=true);
+ } <br>
+ //-- Taladros
+ #translate([-167.8/2+10,0,0])
+   cylinder(r=9/2, h=50, center=true); <br>  
+ #translate([+167.8/2-10,0,0])
+   cylinder(r=9/2, h=50, center=true);
+}
+</pre>
+</td></tr></tbody></table>
+<p>Se describen algunos modificaciones y operadores para hacer depuración:
+</p>
+<ul><li> <b>Operador color()</b>: Cambiar el color de una pieza o partes de una pieza
+</li><li> <b>Modificador *</b>&nbsp;: Comentar la rama. Se ignora al hacer el renderizado, pero se muestra el resto de objetos
+</li><li> <b>Modificador&nbsp;!</b>&nbsp;: Lo contrario a *: Sólo se muestra el objeto al que se aplica y el resto NO se renderiza
+</li><li> <b>Modificador #</b>&nbsp;: Mostrar en transparente las partes usadas en las diferencias. Genial para ver cómo están hechos los taladros
+</li></ul>
+<h3> <span class="mw-headline" id="Imprimiendo_las_piezas_de_mecano"> Imprimiendo las piezas de mecano </span></h3>
+<table style="border: 1px solid darkgray; width:100%">
+
+<tbody><tr style="background: #cedff2;">
+<th> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=w8Cy3gviRsg"><b>Video Tutorial 14/14</b></a>
+</th></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-14-imprimiendo.png" class="image"><img alt="" src="./Diseño de piezas con OpenScad - WikiRobotics_files/300px-Tut-openscad-14-imprimiendo.png" width="300" height="194" class="thumbimage"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Tut-openscad-14-imprimiendo.png" class="internal" title="Aumentar"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/magnify-clip.png" width="15" height="11" alt=""></a></div>Imprimiendo las piezas de mecano (<i>click para ampliar</i>)</div></div></div>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td>
+<p><b>Programa</b>:
+</p>
+<pre>use &lt;pieza_mecano.scad&gt; <br>
+pieza_mecano(); <br>
+translate([0,15,0])
+  pieza_mecano(n=3); <br>
+translate([0,30,0])
+  pieza_mecano(n=2); <br>
+</pre>
+</td></tr></tbody></table>
+<p>Se generan 3 piezas de mecano de 4, 3 y 2 taladros, y se imprimen usando la impresora <a href="http://www.iearobotics.com/wiki/index.php?title=Prusa_Mendel_Iteraci%C3%B3n_2:_R3" title="Prusa Mendel Iteración 2: R3">R3</a> (Una Prusa mendel iteración 2)
+</p>
+<dl><dd><table class="wikitable">
+
+<tbody><tr>
+<td> <a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05129.JPG" class="image" title="Imprimiendo las piezas  (click para ampliar)"><img alt="Imprimiendo las piezas  (click para ampliar)" src="./Diseño de piezas con OpenScad - WikiRobotics_files/200px-DSC05129.JPG" width="200" height="150"></a>
+</td>
+<td> <a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05130.JPG" class="image" title="Piezas impresas (click para ampliar)"><img alt="Piezas impresas (click para ampliar)" src="./Diseño de piezas con OpenScad - WikiRobotics_files/200px-DSC05130.JPG" width="200" height="150"></a>
+</td>
+<td> <a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:DSC05133.JPG" class="image" title="Probando las piezas (click para ampliar)"><img alt="Probando las piezas (click para ampliar)" src="./Diseño de piezas con OpenScad - WikiRobotics_files/200px-DSC05133.JPG" width="200" height="150"></a>
+</td>
+<td>
+</td></tr></tbody></table></dd></dl>
+<h2> <span class="mw-headline" id="Repositorio"> Repositorio </span></h2>
+<p>Los ficheros fuentes están en este repositorio SVN:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="http://svn.iearobotics.com/tutorial_openscad">http://svn.iearobotics.com/tutorial_openscad</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Licencia"> Licencia </span></h2>
+<table border="4" cellpadding="8" cellspacing="0" class="bonita" style="margin: 0.5em 0.5em 0.5em 1em; padding: 0.5em; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse; font-size: 95%;">
+<tbody><tr>
+<td> <a href="http://www.iearobotics.com/wiki/index.php?title=Archivo:Cc_logo.png" class="image"><img alt="Cc logo.png" src="./Diseño de piezas con OpenScad - WikiRobotics_files/Cc_logo.png" width="88" height="31"></a> This work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/es/">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Enlaces"> Enlaces </span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/">Thingiverse</a>: El youtube de los objetos
+</li><li> <a href="http://www.iearobotics.com/wiki/index.php?title=Mini-Skybot" title="Mini-Skybot">Mini-Skybot</a>: Robot móvil libre e imprimible
+</li><li> <a rel="nofollow" class="external text" href="http://www.openscad.org/">OpenScad</a>: Herramienta libre para diseño de piezas
+</li><li> <a rel="nofollow" class="external text" href="http://sourceforge.net/apps/mediawiki/free-cad/index.php?title=Main_Page">Freecad</a>: Herramienta libre de CAD
+</li><li> <a href="http://www.iearobotics.com/wiki/index.php?title=Objetos_3D" title="Objetos 3D">Objetos 3D</a>: Objetos imprimibles
+</li><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/tag:UC3M">Piezas creadas en Plastic Valley UC3M!</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:8559">Orugator</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.thingiverse.com/thing:7640">Unitrack</a>
+</li><li> <a rel="nofollow" class="external text" href="http://asrob.uc3m.es/index.php/Proyecto:_Clone_wars">Proyecto Clone Wars</a>: Clonando impresoras 3D
+</li><li> <a rel="nofollow" class="external text" href="http://iearobotics.com/oomlwiki/doku.php">OOML</a>: Object Oriented Mechanics. Mecánica orientada a Objetos
+</li></ul>
+<h2> <span class="mw-headline" id="Noicias"> Noicias </span></h2>
+<ul><li> <b>06/Sep/2012</b>: Tutorial incluido en la <a href="http://www.iearobotics.com/wiki/index.php?title=Obijuan_Academy" title="Obijuan Academy">Obijuan Academy</a>
+</li><li> <b>22/Mayo/2012</b>: Lista la primera versión. Video-tutorial (1-14) finalizado
+</li><li> <b>08/Mayo/2012</b>: Comenzada la página
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 145/1000000
+Post-expand include size: 3200/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key iearobotics_wiki-wiki_:pcache:idhash:2397-0!*!0!!es!2!* and timestamp 20131003122337 -->
+</div><div class="printfooter">
+Obtenido de «<a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&oldid=16009">http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&amp;oldid=16009</a>»</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="http://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Robots_imprimibles" title="Categoría:Robots imprimibles">Robots imprimibles</a></li><li><a href="http://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Charlas_y_Conferencias" title="Categoría:Charlas y Conferencias">Charlas y Conferencias</a></li><li><a href="http://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Rob%C3%B3tica" title="Categoría:Robótica">Robótica</a></li><li><a href="http://www.iearobotics.com/wiki/index.php?title=Categor%C3%ADa:Obijuan_Academy" title="Categoría:Obijuan Academy">Obijuan Academy</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Vistas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad" primary="1" context="subject" title="Ver el artículo [alt-c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.iearobotics.com/wiki/index.php?title=Discusi%C3%B3n:Dise%C3%B1o_de_piezas_con_OpenScad&action=edit&redlink=1" primary="1" context="talk" title="Discusión acerca del artículo [alt-t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&action=edit" primary="1" title="Esta página está protegida.
+Puedes ver su código fuente [alt-e]" accesskey="e">Ver fuente</a></li>
+				<li id="ca-history"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&action=history" rel="archives" title="Versiones anteriores de esta página y sus autores [alt-h]" accesskey="h">Historial</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Herramientas personales</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:Entrar&returnto=Dise%C3%B1o+de+piezas+con+OpenScad&returntoquery=printable%3Dyes" title="Te recomendamos iniciar sesión, sin embargo no es obligatorio [alt-o]" accesskey="o">Iniciar sesión</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="http://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" style="background-image: url(/wiki/skins/common/images/logo-wiki.png);" title="Visitar la página principal"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navegación</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://www.iearobotics.com/wiki/index.php?title=P%C3%A1gina_principal" title="Visitar la página principal [alt-z]" accesskey="z">Página principal</a></li>
+				<li id="n-recentchanges"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:CambiosRecientes" title="Lista de cambios recientes en el wiki [alt-r]" accesskey="r">Cambios recientes</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Buscar</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.iearobotics.com/wiki/index.php" id="searchform">
+				<input type="hidden" name="title" value="Especial:Buscar">
+				<input type="search" name="search" title="Buscar en WikiRobotics [alt-f]" accesskey="f" id="searchInput">
+				<input type="submit" name="go" value="Ir" title="Ir al artículo con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Buscar" title="Busca este texto en las páginas" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Herramientas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:LoQueEnlazaAqu%C3%AD/Dise%C3%B1o_de_piezas_con_OpenScad" title="Lista de todas las páginas del wiki que enlazan aquí [alt-j]" accesskey="j">Lo que enlaza aquí</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:CambiosEnEnlazadas/Dise%C3%B1o_de_piezas_con_OpenScad" title="Cambios recientes en las páginas que enlazan con ésta [alt-k]" accesskey="k">Cambios relacionados</a></li>
+				<li id="t-specialpages"><a href="http://www.iearobotics.com/wiki/index.php?title=Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [alt-q]" accesskey="q">Páginas especiales</a></li>
+				<li id="t-permalink"><a href="http://www.iearobotics.com/wiki/index.php?title=Dise%C3%B1o_de_piezas_con_OpenScad&oldid=16009" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="./Diseño de piezas con OpenScad - WikiRobotics_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> Esta página fue modificada por última vez el 6 sep 2012, a las 08:16.</li>
+		<li id="viewcount">Esta página ha sido visitada 7.892 veces.</li>
+		<li id="copyright">El contenido está disponible bajo los términos de la <a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>.</li>
+		<li id="privacy"><a href="http://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Pol%C3%ADtica_de_protecci%C3%B3n_de_datos" title="WikiRobotics:Política de protección de datos">Política de protección de datos</a></li>
+		<li id="about"><a href="http://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Acerca_de" title="WikiRobotics:Acerca de">Acerca de WikiRobotics</a></li>
+		<li id="disclaimer"><a href="http://www.iearobotics.com/wiki/index.php?title=WikiRobotics:Limitaci%C3%B3n_general_de_responsabilidad" title="WikiRobotics:Limitación general de responsabilidad">Aviso legal</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready"], null, true);
+}</script><script src="./Diseño de piezas con OpenScad - WikiRobotics_files/load(3).php" type="text/javascript"></script>
+<!-- Served in 0.960 secs. --></body></html>
